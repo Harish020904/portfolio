@@ -1,0 +1,56 @@
+export { registerCommand, executeCommand, getRegisteredCommands, getCommandDescription, getCommandUsage, getCommandManual, getAllCommands } from './registry';
+export type { CommandFn, CommandResult, ParsedCommand } from './registry';
+
+import { registerLs } from './ls';
+import { registerCd } from './cd';
+import { registerPwd } from './pwd';
+import { registerCat } from './cat';
+import { registerClear } from './clear';
+import { registerEcho } from './echo';
+import { registerWhoami } from './whoami';
+import { registerUname } from './uname';
+import { registerHelp } from './help';
+import { registerHistory } from './history';
+import { registerMan } from './man';
+import { registerNeofetch } from './neofetch';
+import { registerTree } from './tree';
+import { registerAbout } from './about';
+import { registerDate } from './date';
+import { registerLess } from './less';
+import { registerSudo } from './sudo';
+import { registerVim } from './vim';
+import { registerSsh } from './ssh';
+import { registerPing } from './ping';
+import { registerCowsay } from './cowsay';
+import { registerBtw } from './btw';
+import { registerMotd } from './motd';
+import { registerMatrix } from './matrix';
+import { registerSource } from './source';
+
+export function registerBuiltinCommands(): void {
+  registerLs();
+  registerCd();
+  registerPwd();
+  registerCat();
+  registerClear();
+  registerEcho();
+  registerWhoami();
+  registerUname();
+  registerHelp();
+  registerHistory();
+  registerMan();
+  registerNeofetch();
+  registerTree();
+  registerAbout();
+  registerDate();
+  registerLess();
+  registerSudo();
+  registerVim();
+  registerSsh();
+  registerPing();
+  registerCowsay();
+  registerBtw();
+  registerMotd();
+  registerMatrix();
+  registerSource();
+}

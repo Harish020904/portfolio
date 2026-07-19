@@ -1,0 +1,111 @@
+/* ── Terminal Portfolio — Global Styles ── */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Terminal color palette */
+  --term-bg: #0d1117;
+  --term-fg: #c9d1d9;
+  --term-green: #3fb950;
+  --term-bright-green: #56d364;
+  --term-blue: #58a6ff;
+  --term-cyan: #39c5cf;
+  --term-yellow: #d29922;
+  --term-red: #f85149;
+  --term-magenta: #bc8cff;
+  --term-orange: #d18616;
+  --term-dim: #484f58;
+  --term-dim-text: #8b949e;
+  --term-selection: rgba(56, 139, 253, 0.15);
+  --term-cursor: #58a6ff;
+  --term-prompt-user: #3fb950;
+  --term-prompt-path: #58a6ff;
+  --term-border: #21262d;
+  --term-surface: #161b22;
+
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'SF Mono', 'Consolas', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--term-bg);
+  color: var(--term-fg);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--term-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--term-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--term-dim);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--term-selection);
+  color: var(--term-fg);
+}
+
+/* ── Blinking cursor animation ── */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 4px rgba(63, 185, 80, 0.3); }
+  50% { text-shadow: 0 0 8px rgba(63, 185, 80, 0.6), 0 0 16px rgba(63, 185, 80, 0.2); }
+}
